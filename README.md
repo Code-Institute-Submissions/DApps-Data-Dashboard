@@ -1,3 +1,3 @@
 # DApps Data Dashboard
 
-Second Milestone project for code insititude full stack developer course
+Second Milestone project for code institute full stack developer course
