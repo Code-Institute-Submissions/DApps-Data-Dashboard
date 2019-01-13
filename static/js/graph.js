@@ -48,4 +48,22 @@ function show_user_per_platform_average(ndx) {
             return { count: 0, total: 0 };
         }
     );
+
+    var pieChart = dc.pieChart("users-balance");
+
+    pieChart
+        .width(200)
+        .height(200)
+        .innerRadius(30)
+        .dimension(dappDim)
+        .group(averageUsersPerPlatformGroup)
+        .valueAccessor(function(d) {
+            if (d.value.count == 0) {
+                return 0;
+            } else {
+                return Math.round(d.value.total / d.value.count);
+            }
+        })
+        .transitionDuration(900)
+        .legend(dc.legend().x(0).y(200).horizontal(true).itemHeight(13).gap(5));
 }
