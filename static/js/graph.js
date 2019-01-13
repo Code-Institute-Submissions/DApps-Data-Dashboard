@@ -20,6 +20,7 @@ function makeGraphs(error, dappsData) {
     // Calling chart functions
     show_user_per_platform_average(ndx);
     show_categories_user_balance(ndx);
+    show_weekly_transactions_per_platform(ndx);
 
     dc.renderAll();
 
@@ -105,4 +106,23 @@ function show_categories_user_balance(ndx) {
         .elasticY(true)
         .yAxis()
         .ticks(10);
+}
+
+function show_weekly_transactions_per_platform(ndx) {
+
+    var weeklyTxDim = ndx.dimension(dc.pluck("platform"));
+
+    var weeklyTxGroup = weeklyTxDim.group().reduceSum(dc.pluck("weekly_txs"));
+
+    var pieChart1 = dc.pieChart("#weekly-transactions");
+
+    pieChart1
+        .width(200)
+        .height(200)
+        .dimension(weeklyTxDim)
+        .group(weeklyTxGroup)
+        .externalRadiusPadding(25)
+        .useViewBoxResizing(true)
+        .transitionDuration(900)
+        .legend(dc.legend().x(0).y(200).horizontal(true).itemHeight(13).gap(5));
 }
