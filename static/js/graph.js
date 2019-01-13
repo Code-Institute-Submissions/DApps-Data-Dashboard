@@ -14,12 +14,26 @@ function makeGraphs(error, dappsData) {
         d.weekly_txs = +d.weekly_txs;
         d.txs_24hr = +d.txs_24hr;
     });
+    // Calling Selector Functions
+    show_platform_selector(ndx);
 
-    // calling chart functions
+    // Calling chart functions
     show_user_per_platform_average(ndx);
+    show_categories_user_balance(ndx);
 
     dc.renderAll();
 
+}
+
+function show_platform_selector(ndx) {
+
+    var platformDim = ndx.dimension(dc.pluck("platform"));
+
+    var platformSelectGroup = platformDim.group();
+
+    dc.selectMenu("#platform-selector")
+        .dimension(platformDim)
+        .group(platformSelectGroup);
 }
 
 function show_user_per_platform_average(ndx) {
@@ -68,4 +82,27 @@ function show_user_per_platform_average(ndx) {
         })
         .transitionDuration(900)
         .legend(dc.legend().x(0).y(200).horizontal(true).itemHeight(13).gap(5));
+}
+
+function show_categories_user_balance(ndx) {
+
+    var categoryDim = ndx.dimension(dc.pluck("category"));
+
+    var categoryGroup = categoryDim.group().reduceSum(dc.pluck("users_24hr"));
+
+    var barChart = dc.barChart("#category-balance");
+
+    barChart
+        .width(600)
+        .height(300)
+        .margins({ top: 10, right: 50, bottom: 30, left: 50 })
+        .dimension(categoryDim)
+        .group(categoryGroup)
+        .useViewBoxResizing(true)
+        .transitionDuration(900)
+        .x(d3.scale.ordinal())
+        .xUnits(dc.units.ordinal)
+        .elasticY(true)
+        .yAxis()
+        .ticks(10);
 }
