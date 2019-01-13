@@ -49,12 +49,14 @@ function show_user_per_platform_average(ndx) {
         }
     );
 
-    var pieChart = dc.pieChart("users-balance");
+    var pieChart = dc.pieChart("#users-balance");
 
     pieChart
         .width(200)
         .height(200)
         .innerRadius(30)
+        .externalRadiusPadding(25)
+        .useViewBoxResizing(true)
         .dimension(dappDim)
         .group(averageUsersPerPlatformGroup)
         .valueAccessor(function(d) {
