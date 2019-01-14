@@ -26,6 +26,7 @@ function makeGraphs(error, dappsData) {
     show_weekly_transactions_per_platform(ndx);
     show_daily_users_per_dapp(ndx);
     show_users_24hr_transactions(ndx);
+    show_dapps_daily_weekly_transactions(ndx);
 
     dc.renderAll();
 
@@ -208,4 +209,45 @@ function show_users_24hr_transactions(ndx) {
         .renderHorizontalGridLines(true)
         .margins({ top: 10, right: 50, bottom: 75, left: 75 })
         .transitionDuration(900);
+}
+
+function show_dapps_daily_weekly_transactions(ndx) {
+
+    var dappNameDim = ndx.dimension(dc.pluck("name"));
+
+    var dappDailyTransactionDim = dappNameDim.group().reduceSum(function(d){
+        return d.txs_24hr;
+    });
+
+    var dappWeeklyTransactionDim = dappNameDim.group().reduceSum(function(d){
+        return d.weekly_txs;
+    });
+
+    var stackedChart = dc.barChart("#dapps-transactions");
+
+    stackedChart
+        .width(1000)
+        .height(350)
+        .margins({ top: 10, right: 50, bottom: 130, left: 60 })
+        .useViewBoxResizing(true)
+        .dimension(dappNameDim)
+        .group(dappDailyTransactionDim)
+        .stack(dappWeeklyTransactionDim)
+        .transitionDuration(900)
+        .x(d3.scale.ordinal())
+        .xUnits(dc.units.ordinal)
+        .elasticY(true)
+        //.ordinalColors()
+        .yAxis()
+        .ticks(10);
+
+        stackedChart.on("renderlet", function (stackedChart) {
+            // Rotate xAxis Labels
+            stackedChart
+                .selectAll("g.x text")
+                .attr("dx", "-12")
+                .attr("dy", "-5")
+                .attr("transform", "rotate(-90)")
+                .style("text-anchor", "end");
+        });
 }
