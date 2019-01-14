@@ -24,6 +24,7 @@ function makeGraphs(error, dappsData) {
     show_user_per_platform_average(ndx);
     show_categories_user_balance(ndx);
     show_weekly_transactions_per_platform(ndx);
+    show_daily_users_per_dapp(ndx);
 
     dc.renderAll();
 
@@ -150,4 +151,25 @@ function show_weekly_transactions_per_platform(ndx) {
         .useViewBoxResizing(true)
         .transitionDuration(900)
         .legend(dc.legend().x(0).y(200).horizontal(true).itemHeight(13).gap(5));
+}
+
+function show_daily_users_per_dapp(ndx) {
+
+    var dailyDim = ndx.dimension(dc.pluck("name"));
+
+    var dailyGroup = dailyDim.group().reduceSum(dc.pluck("users_24hr"));
+
+    var rowChart = dc.rowChart("#daily-users");
+
+    rowChart
+        .width(1000)
+        .height(350)
+        .useViewBoxResizing(true)
+        .x(d3.scale.linear().domain([6, 10]))
+        .dimension(dailyDim)
+        .group(dailyGroup)
+        .elasticX(true)
+        .rowsCap(15)
+        .othersGrouper(false)
+        .transitionDuration(900);
 }
