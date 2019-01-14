@@ -31,6 +31,8 @@ function makeGraphs(error, dappsData) {
     dc.renderAll();
 
 }
+    // Dashboard Colors
+    var dashboardColors = (["#002b36", "#2AA198", "#839496", "#3182bd", "#218AAB"]);
 
 function show_platform_selector(ndx) {
 
@@ -110,7 +112,8 @@ function show_user_per_platform_average(ndx) {
             }
         })
         .transitionDuration(900)
-        .legend(dc.legend().x(0).y(200).horizontal(true).itemHeight(13).gap(5));
+        .ordinalColors(dashboardColors)
+        .legend(dc.legend().x(0).y(185).horizontal(true).itemHeight(13).gap(5));
 }
 
 function show_categories_user_balance(ndx) {
@@ -132,6 +135,10 @@ function show_categories_user_balance(ndx) {
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
         .elasticY(true)
+        .colorAccessor(function(d) {
+            return d.value;
+        })
+        .ordinalColors(dashboardColors)
         .yAxis()
         .ticks(10);
 }
@@ -152,7 +159,8 @@ function show_weekly_transactions_per_platform(ndx) {
         .externalRadiusPadding(25)
         .useViewBoxResizing(true)
         .transitionDuration(900)
-        .legend(dc.legend().x(0).y(200).horizontal(true).itemHeight(13).gap(5));
+        .ordinalColors(dashboardColors)
+        .legend(dc.legend().x(0).y(185).horizontal(true).itemHeight(13).gap(5));
 }
 
 function show_daily_users_per_dapp(ndx) {
@@ -173,6 +181,7 @@ function show_daily_users_per_dapp(ndx) {
         .elasticX(true)
         .rowsCap(15)
         .othersGrouper(false)
+        .ordinalColors(dashboardColors)
         .transitionDuration(900);
 }
 
@@ -204,6 +213,10 @@ function show_users_24hr_transactions(ndx) {
         .title(function(d) {
             return "Over 24hrs " + d.key[2] + " had " + d.key[0] + " users and " + d.key[1] + " transactions.";
         })
+        .colorAccessor(function(d) {
+            return d.key[3];
+        })
+        .ordinalColors(dashboardColors)
         .dimension(transactionsDim)
         .group(userTransactionsGroup)
         .renderHorizontalGridLines(true)
@@ -237,7 +250,7 @@ function show_dapps_daily_weekly_transactions(ndx) {
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
         .elasticY(true)
-        //.ordinalColors()
+        .ordinalColors(dashboardColors)
         .yAxis()
         .ticks(10);
 
