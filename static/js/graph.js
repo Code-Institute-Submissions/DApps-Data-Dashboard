@@ -24,6 +24,8 @@ function makeGraphs(error, dappsData) {
     show_user_per_platform_average(ndx);
     show_categories_user_balance(ndx);
     show_weekly_transactions_per_platform(ndx);
+    show_daily_users_per_dapp(ndx);
+    show_users_24hr_transactions(ndx);
 
     dc.renderAll();
 
@@ -150,4 +152,60 @@ function show_weekly_transactions_per_platform(ndx) {
         .useViewBoxResizing(true)
         .transitionDuration(900)
         .legend(dc.legend().x(0).y(200).horizontal(true).itemHeight(13).gap(5));
+}
+
+function show_daily_users_per_dapp(ndx) {
+
+    var dailyDim = ndx.dimension(dc.pluck("name"));
+
+    var dailyGroup = dailyDim.group().reduceSum(dc.pluck("users_24hr"));
+
+    var rowChart = dc.rowChart("#daily-users");
+
+    rowChart
+        .width(1000)
+        .height(350)
+        .useViewBoxResizing(true)
+        .x(d3.scale.linear().domain([6, 10]))
+        .dimension(dailyDim)
+        .group(dailyGroup)
+        .elasticX(true)
+        .rowsCap(15)
+        .othersGrouper(false)
+        .transitionDuration(900);
+}
+
+function show_users_24hr_transactions(ndx) {
+
+    var usersDim = ndx.dimension(dc.pluck("users_24hr"));
+
+    var transactionsDim = ndx.dimension(function(d) {
+        return [d.users_24hr, d.txs_24hr, d.name, d.platform];
+    });
+
+    var userTransactionsGroup = transactionsDim.group();
+
+    var minUsers = usersDim.bottom(1)[0].users_24hr;
+    var maxUsers = usersDim.top(1)[0].users_24hr;
+
+    var scatterPlotChart = dc.scatterPlot("#daily-transactions");
+
+    scatterPlotChart
+        .width(1000)
+        .height(350)
+        .useViewBoxResizing(true)
+        .x(d3.scale.linear().domain([minUsers, maxUsers]))
+        .brushOn(false)
+        .symbolSize(10)
+        .clipPadding(12)
+        .yAxisLabel("24Hr Transactions")
+        .xAxisLabel("24Hr Users")
+        .title(function(d) {
+            return "Over 24hrs " + d.key[2] + " had " + d.key[0] + " users and " + d.key[1] + " transactions.";
+        })
+        .dimension(transactionsDim)
+        .group(userTransactionsGroup)
+        .renderHorizontalGridLines(true)
+        .margins({ top: 10, right: 50, bottom: 75, left: 75 })
+        .transitionDuration(900);
 }
