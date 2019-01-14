@@ -14,8 +14,11 @@ function makeGraphs(error, dappsData) {
         d.weekly_txs = +d.weekly_txs;
         d.txs_24hr = +d.txs_24hr;
     });
+
     // Calling Selector Functions
     show_platform_selector(ndx);
+    show_dapps_selector(ndx);
+    show_category_selector(ndx);
 
     // Calling chart functions
     show_user_per_platform_average(ndx);
@@ -35,6 +38,28 @@ function show_platform_selector(ndx) {
     dc.selectMenu("#platform-selector")
         .dimension(platformDim)
         .group(platformSelectGroup);
+}
+
+function show_dapps_selector(ndx) {
+
+    var dappSelectDim = ndx.dimension(dc.pluck("name"));
+
+    var dappSelectGroup = dappSelectDim.group();
+
+    dc.selectMenu("#dapps-selector")
+        .dimension(dappSelectDim)
+        .group(dappSelectGroup);
+}
+
+function show_category_selector(ndx) {
+
+    var categorySelectDim = ndx.dimension(dc.pluck("category"));
+
+    var categorySelectGroup = categorySelectDim.group();
+
+    dc.selectMenu("#category-selector")
+        .dimension(categorySelectDim)
+        .group(categorySelectGroup);
 }
 
 function show_user_per_platform_average(ndx) {
