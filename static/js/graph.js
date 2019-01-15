@@ -32,7 +32,7 @@ function makeGraphs(error, dappsData) {
 
 }
     // Dashboard Colors
-    var dashboardColors = (["#002b36", "#2AA198", "#839496", "#3182bd", "#218AAB"]);
+    var dashboardColors = (["#008000", "#2AA198", "#839496", "#3182bd", "#218AAB"]);
 
 function show_platform_selector(ndx) {
 
