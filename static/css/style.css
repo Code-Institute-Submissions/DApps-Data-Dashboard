@@ -1,7 +1,36 @@
+/*--------------------------------------------Additional Styles*/
+h1 {
+  color: rgb(182, 180, 180);
+}
+
+/*--------------------------------------------Card Styles*/
+.card {
+  margin-top: 60px;
+}
+
+.card-title {
+  color: rgb(182, 180, 180);
+}
+/*--------------------------------------------Chart Styles*/
+
 .custom-chart {
-    width: 100%
+  width: 100%;
+  height: 100%;
+}
+
+.fa-pie-chart,
+.fa-bar-chart,
+.fa-line-chart {
+  color: rgb(182, 180, 180);
 }
 
 .footer {
-    height: 80px;
+  height: 80px;
+}
+
+/*--------------------------------------------Media Queries*/
+@media screen and (max-width: 1000px) {
+  .card {
+    margin-top: 30px;
+  }
 }
