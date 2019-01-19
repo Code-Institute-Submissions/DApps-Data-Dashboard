@@ -3,6 +3,10 @@ h1, h2, p {
   color: #fefff4;
 }
 
+main {
+    padding-top: 40px;
+}
+
 /*--------------------------------------------Card Styles*/
 .card {
   margin-top: 60px;
@@ -27,6 +31,10 @@ h1, h2, p {
 
 .footer {
   height: 80px;
+}
+
+.foot-nav {
+    padding-top: 20px;
 }
 
 /*--------------------------------------------Media Queries*/
