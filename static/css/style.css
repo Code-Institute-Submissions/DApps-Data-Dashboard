@@ -1,6 +1,6 @@
 /*--------------------------------------------Additional Styles*/
-h1 {
-  color: rgb(182, 180, 180);
+h1, h2, p {
+  color: #fefff4;
 }
 
 /*--------------------------------------------Card Styles*/
@@ -8,8 +8,8 @@ h1 {
   margin-top: 60px;
 }
 
-.card-title {
-  color: rgb(182, 180, 180);
+.card-header, .card-title {
+  color: #fefff4;
 }
 /*--------------------------------------------Chart Styles*/
 
@@ -21,7 +21,7 @@ h1 {
 .fa-pie-chart,
 .fa-bar-chart,
 .fa-line-chart {
-  color: rgb(182, 180, 180);
+  color: #7f861f;
 }
 
 .footer {
