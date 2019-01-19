@@ -16,7 +16,7 @@
     />
     <link rel="stylesheet" href="static/css/style.css" />
   </head>
-  <body>
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
     <!-- Nav -->
     <nav class="navbar navbar-expand-md navbar-dark">
       <div class="navbar-header">
@@ -35,16 +35,24 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbar">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
             <a class="nav-link" href="#"
               >Home <span class="sr-only">(current)</span></a
             >
           </li>
-          <li class="nav-item"><a class="nav-link" href="#"></a></li>
-          <li class="nav-item"><a class="nav-link" href="#"></a></li>
-          <li class="nav-item"><a class="nav-link" href="#"></a></li>
-          <li class="nav-item"><a class="nav-link" href="#"></a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#3-charts">Pie Charts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#rowchart">Row Chart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#scatterchart">ScatterPlot Chart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#stackedchart">Stacked Chart</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -63,8 +71,9 @@
           <div class="row">
             <div class="col-xs-12 col-sm-12 section-text text-center">
               <p class="section-banner">
-                Decentralised Applications(DApps) data dashboard showing statistics from 3 blockchain
-                platforms. <a href="https://eos.io/">EOSIO(EOS)</a>,
+                Decentralised Applications(DApps) data dashboard showing
+                statistics from 3 blockchain platforms.
+                <a href="https://eos.io/">EOSIO(EOS)</a>,
                 <a href="https://ethereum.org/">Ethereum(ETH)</a>,
                 <a href="https://tron.network/">Tron(TRX)</a>.
               </p>
@@ -100,85 +109,108 @@
       </section>
 
       <!-- First Row Of Charts- Pie Chart - Bar Chart - Pie Chart 1 -->
-      <section class="section 3-charts">
+      <section id="3-charts" class="section">
         <div class="container-fluid">
           <div class="row">
             <!-- Pie Chart -->
             <div class="col-xs-12 col-sm-12 col-md-3 card">
-              <div class="card-header text-uppercase"><i class=" fa fa-pie-chart"></i> Platform Users Breakdown</div>
+              <div class="card-header text-uppercase">
+                <i class=" fa fa-pie-chart"></i> Platform Users Breakdown
+              </div>
               <div class="card-body">
-                <p class="card-title">Average amount of users per platform</p>
                 <!-- Display piechart -->
                 <div class="custom-chart" id="users-balance"></div>
               </div>
+              <p class="card-footer text-center">
+                Average amount of users per platform
+              </p>
             </div>
 
             <!-- Bar Chart -->
             <div class="col-xs-12 col-sm-12 col-md-6 card">
-              <div class="card-header text-uppercase"><i class=" fa fa-bar-chart"></i> Categories Stats</div>
+              <div class="card-header text-uppercase">
+                <i class=" fa fa-bar-chart"></i> Categories Stats
+              </div>
               <div class="card-body">
-                <p class="card-title">DApps Category Balance</p>
                 <!-- Display barChart -->
                 <div class="custom-chart" id="category-balance"></div>
               </div>
+              <p class="card-footer text-center">DApps Category Balance</p>
             </div>
 
             <!-- Pie Chart 1 -->
             <div class="col-xs-12 col-sm-12 col-md-3 card">
-              <div class="card-header text-uppercase"><i class=" fa fa-pie-chart"></i> Weekly Transactions</div>
+              <div class="card-header text-uppercase">
+                <i class=" fa fa-pie-chart"></i> Weekly Transactions
+              </div>
               <div class="card-body">
-                <p class="card-title">Amount of Weekly Transactions By Platform</p>
                 <!-- Display pieChart1 -->
                 <div class="custom-chart" id="weekly-transactions"></div>
               </div>
+              <p class="card-footer text-center">
+                Amount of Weekly Transactions By Platform
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Row Chart -->
-      <section class="section rowchart">
+      <section id="rowchart" class="section">
         <div class="container-fluid">
           <div class="row">
             <div class="col-xs-12 col-sm-12 card">
-              <div class="card-header text-uppercase"><i class=" fa fa-bar-chart"></i> Daily DApps Users</div>
+              <div class="card-header text-uppercase">
+                <i class=" fa fa-bar-chart"></i> Daily DApps Users
+              </div>
               <div class="card-body">
-                <p class="card-title">Amount of Daily Users By DApp</p>
                 <!-- Display rowChart -->
                 <div class="custom-chart" id="daily-users"></div>
               </div>
+              <p class="card-footer text-center">
+                Amount of Daily Users By DApp
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       <!-- ScatterPlot Chart -->
-      <section class="section scatterchart">
+      <section id="scatterchart" class="section">
         <div class="container-fluid">
           <div class="row">
             <div class="col-xs-12 col-sm-12 card">
-              <div class="card-header text-uppercase"><i class=" fa fa-line-chart"></i> Daily User Transactions</div>
+              <div class="card-header text-uppercase">
+                <i class=" fa fa-line-chart"></i> Daily User Transactions
+              </div>
               <div class="card-body">
-                <p class="card-title">Amount of Daily Transactions By Users</p>
                 <!-- Display scatterplotChart -->
                 <div class="custom-chart" id="daily-transactions"></div>
               </div>
+              <p class="card-footer text-center">
+                Amount of Daily Transactions By Users
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Stacked Chart -->
-      <section class="section stackedchart">
+      <section id="stackedchart" class="section">
         <div class="container-fluid">
           <div class="row">
             <div class="col-xs-12 col-sm-12 card">
-              <div class="card-header text-uppercase"><i class=" fa fa-bar-chart"></i> DApps Daily and Weekly Transactions</div>
+              <div class="card-header text-uppercase">
+                <i class=" fa fa-bar-chart"></i> DApps Daily and Weekly
+                Transactions
+              </div>
               <div class="card-body">
-                <p class="card-title">Daily and Weekly Transactions for each DApp</p>
                 <!-- Display stackedchart -->
                 <div class="custom-chart" id="dapps-transactions"></div>
               </div>
+              <p class="card-footer text-center">
+                Daily and Weekly Transactions for each DApp
+              </p>
             </div>
           </div>
         </div>
@@ -186,7 +218,26 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <nav class="nav justify-content-center foot">
+        <a class="nav-link active" href="#3-charts">Pie Charts</a>
+        <a class="nav-link" href="#rowchart">Row Chart</a>
+        <a class="nav-link" href="#scatterchart">ScatterPlot Chart</a>
+        <a class="nav-link" href="#stackedchart">Stacked Chart</a>
+      </nav>
+    </footer>
+
+    <!-- Back to top button -->
+    <a
+      href="#"
+      id="back-to-top"
+      class="btn btn-primary btn-lg back-to-top"
+      role="button"
+      title="Back to Top"
+      data-toggle="tooltip"
+      data-placement="left"
+      ><i class="fa fa-chevron-up" aria-hidden="true"></i
+    ></a>
 
     <!-- Scripts -->
     <script
@@ -210,5 +261,26 @@
     <script type="text/javascript" src="static/js/dc.min.js"></script>
     <script type="text/javascript" src="static/js/queue.min.js"></script>
     <script type="text/javascript" src="static/js/graph.js"></script>
+
+    <!-- Back to top jquery script -->
+    <script>
+      $(document).ready(function () {
+          $(window).scroll(function () {
+              if ($(this).scrollTop() > 50) {
+                  $("#back-to-top").fadeIn();
+              } else {
+                  $("#back-to-top").fadeOut();
+              }
+          });
+          // scroll body to 0px on click
+          $("#back-to-top").click(function () {
+              $("#back-to-top").tooltip("hide");
+              $("body,html").animate({
+                  scrollTop: 0
+              }, 800);
+              return false;
+          });
+      });
+  </script>
   </body>
 </html>

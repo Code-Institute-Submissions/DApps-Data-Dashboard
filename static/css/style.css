@@ -3,6 +3,10 @@ h1, h2, p {
   color: #fefff4;
 }
 
+main {
+    padding-top: 40px;
+}
+
 /*--------------------------------------------Card Styles*/
 .card {
   margin-top: 60px;
@@ -11,6 +15,7 @@ h1, h2, p {
 .card-header, .card-title {
   color: #fefff4;
 }
+
 /*--------------------------------------------Chart Styles*/
 
 .custom-chart {
@@ -28,6 +33,26 @@ h1, h2, p {
   height: 80px;
 }
 
+.foot-nav {
+    padding-top: 20px;
+}
+
+/*--------------------------------------------Back to top*/
+
+.back-to-top {
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: 0;
+    color: #0000b3;
+  }
+
+  .btn-primary {
+      color: #002b36;
+      background: #7f861f;
+  }
 /*--------------------------------------------Media Queries*/
 @media screen and (max-width: 1000px) {
   .card {
