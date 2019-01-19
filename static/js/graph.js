@@ -31,9 +31,11 @@ function makeGraphs(error, dappsData) {
     dc.renderAll();
 
 }
+
     // Dashboard Colors
     var dashboardColors = (["#003300", "#0000b3", "#839496", "#330000", "#218AAB"]);
 
+    // Selectors
 function show_platform_selector(ndx) {
 
     var platformDim = ndx.dimension(dc.pluck("platform"));
@@ -67,6 +69,7 @@ function show_category_selector(ndx) {
         .group(categorySelectGroup);
 }
 
+    // First piechart with custom reduce to get the average amount of users per platform
 function show_user_per_platform_average(ndx) {
 
     var dappDim = ndx.dimension(dc.pluck("platform"));
@@ -108,6 +111,7 @@ function show_user_per_platform_average(ndx) {
             if (d.value.count == 0) {
                 return 0;
             } else {
+                // Rounding to a whole number
                 return Math.round(d.value.total / d.value.count);
             }
         })
@@ -116,6 +120,7 @@ function show_user_per_platform_average(ndx) {
         .legend(dc.legend().x(0).y(185).horizontal(true).itemHeight(13).gap(5));
 }
 
+    // BarChart showing amount of users per category
 function show_categories_user_balance(ndx) {
 
     var categoryDim = ndx.dimension(dc.pluck("category"));
@@ -143,6 +148,7 @@ function show_categories_user_balance(ndx) {
         .ticks(10);
 }
 
+    // Second PieChart showing the amount of transactions per platform over a 7 day period
 function show_weekly_transactions_per_platform(ndx) {
 
     var weeklyTxDim = ndx.dimension(dc.pluck("platform"));
@@ -163,6 +169,7 @@ function show_weekly_transactions_per_platform(ndx) {
         .legend(dc.legend().x(0).y(185).horizontal(true).itemHeight(13).gap(5));
 }
 
+    // RowChart showing the amount of users per DApp over 24hr period
 function show_daily_users_per_dapp(ndx) {
 
     var dailyDim = ndx.dimension(dc.pluck("name"));
@@ -185,16 +192,19 @@ function show_daily_users_per_dapp(ndx) {
         .transitionDuration(900);
 }
 
+    // ScatterPlot showing the amount of users and transactions over 24hr period
 function show_users_24hr_transactions(ndx) {
 
     var usersDim = ndx.dimension(dc.pluck("users_24hr"));
 
+    //  Returning all data required for chart and chart title function
     var transactionsDim = ndx.dimension(function(d) {
         return [d.users_24hr, d.txs_24hr, d.name, d.platform];
     });
 
     var userTransactionsGroup = transactionsDim.group();
 
+    // setting min and max users for linear scale
     var minUsers = usersDim.bottom(1)[0].users_24hr;
     var maxUsers = usersDim.top(1)[0].users_24hr;
 
@@ -208,8 +218,8 @@ function show_users_24hr_transactions(ndx) {
         .brushOn(false)
         .symbolSize(10)
         .clipPadding(12)
-        .yAxisLabel("24Hr Transactions")
-        .xAxisLabel("24Hr Users")
+        .yAxisLabel("Transactions")
+        .xAxisLabel("Users")
         .title(function(d) {
             return "Over 24hrs " + d.key[2] + " had " + d.key[0] + " users and " + d.key[1] + " transactions.";
         })
@@ -224,6 +234,7 @@ function show_users_24hr_transactions(ndx) {
         .transitionDuration(900);
 }
 
+    // Stacked Chart showing daily and weekly transactions by platform
 function show_dapps_daily_weekly_transactions(ndx) {
 
     var dappNameDim = ndx.dimension(dc.pluck("name"));
