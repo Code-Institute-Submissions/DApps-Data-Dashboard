@@ -37,6 +37,22 @@ main {
     padding-top: 20px;
 }
 
+/*--------------------------------------------Back to top*/
+
+.back-to-top {
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: 0;
+    color: #0000b3;
+  }
+
+  .btn-primary {
+      color: #002b36;
+      background: #7f861f;
+  }
 /*--------------------------------------------Media Queries*/
 @media screen and (max-width: 1000px) {
   .card {
