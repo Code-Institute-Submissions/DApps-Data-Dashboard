@@ -10,6 +10,7 @@ main {
 /*--------------------------------------------Card Styles*/
 .card {
   margin-top: 60px;
+  background-color: #0059b3;
 }
 
 .card-header, .card-title {
