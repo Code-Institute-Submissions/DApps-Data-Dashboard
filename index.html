@@ -231,7 +231,7 @@
     <a
       href="#"
       id="back-to-top"
-      class="btn btn-primary btn-lg back-to-top"
+      class="btn btn-primary btn-sm back-to-top"
       role="button"
       title="Back to Top"
       data-toggle="tooltip"
@@ -241,8 +241,8 @@
 
     <!-- Scripts -->
     <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"
     ></script>
     <script
@@ -264,23 +264,26 @@
 
     <!-- Back to top jquery script -->
     <script>
-      $(document).ready(function () {
-          $(window).scroll(function () {
-              if ($(this).scrollTop() > 50) {
-                  $("#back-to-top").fadeIn();
-              } else {
-                  $("#back-to-top").fadeOut();
-              }
-          });
-          // scroll body to 0px on click
-          $("#back-to-top").click(function () {
-              $("#back-to-top").tooltip("hide");
-              $("body,html").animate({
-                  scrollTop: 0
-              }, 800);
-              return false;
-          });
+      $(document).ready(function() {
+        $(window).scroll(function() {
+          if ($(this).scrollTop() > 350) {
+            $("#back-to-top").fadeIn();
+          } else {
+            $("#back-to-top").fadeOut();
+          }
+        });
+        // scroll body to 0px on click
+        $("#back-to-top").click(function() {
+          $("#back-to-top").tooltip("hide");
+          $("body,html").animate(
+            {
+              scrollTop: 0
+            },
+            800
+          );
+          return false;
+        });
       });
-  </script>
+    </script>
   </body>
 </html>
