@@ -1,4 +1,8 @@
 /*--------------------------------------------Additional Styles*/
+html {
+  scroll-behavior: smooth;
+}
+
 h1, h2, p {
   color: #fefff4;
 }
