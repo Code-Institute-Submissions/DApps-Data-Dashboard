@@ -46,12 +46,11 @@ main {
     right: 20px;
     background-color: transparent;
     border: 0;
-    color: #0000b3;
   }
 
   .btn-primary {
-      color: #002b36;
-      background: #7f861f;
+      color: #7f861f;
+      background: #002b36;
   }
 /*--------------------------------------------Media Queries*/
 @media screen and (max-width: 1000px) {
