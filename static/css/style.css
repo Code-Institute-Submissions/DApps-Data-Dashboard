@@ -3,13 +3,17 @@ html {
   scroll-behavior: smooth;
 }
 
-h1, h2, h5, p {
+h1,
+h2,
+h5,
+p {
   color: #fefff4;
 }
 
 main {
-    padding-top: 40px;
+  padding-top: 40px;
 }
+
 
 /*--------------------------------------------Card Styles*/
 .card {
@@ -17,7 +21,8 @@ main {
   background-color: #446e7e;
 }
 
-.card-header, .card-title {
+.card-header,
+.card-title {
   color: #fefff4;
 }
 
@@ -39,7 +44,7 @@ main {
 }
 
 .foot {
-    padding-top: 80px;
+  padding-top: 80px;
 }
 
 .foot-text {
@@ -49,18 +54,19 @@ main {
 /*--------------------------------------------Back to top*/
 
 .back-to-top {
-    cursor: pointer;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: transparent;
-    border: 0;
-  }
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: 0;
+}
 
-  .btn-primary {
-      color: #7f861f;
-      background: #002b36;
-  }
+.btn-primary {
+  color: #7f861f;
+  background: #002b36;
+}
+
 /*--------------------------------------------Media Queries*/
 @media screen and (max-width: 1000px) {
   .card {

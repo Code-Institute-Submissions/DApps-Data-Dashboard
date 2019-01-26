@@ -132,7 +132,7 @@ function show_categories_user_balance(ndx) {
     barChart
         .width(600)
         .height(300)
-        .margins({ top: 10, right: 50, bottom: 30, left: 50 })
+        .margins({ top: 10, right: 50, bottom: 30, left: 70 })
         .dimension(categoryDim)
         .group(categoryGroup)
         .useViewBoxResizing(true)
