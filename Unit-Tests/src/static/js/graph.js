@@ -1,7 +1,3 @@
-queue()
-    // Load data
-    .defer(d3.csv, 'data/dappsData.csv')
-    .await(makeGraphs);
 
 function makeGraphs(error, dappsData) {
 
