@@ -44,7 +44,8 @@ function show_platform_selector(ndx) {
 
     dc.selectMenu('#platform-selector')
         .dimension(platformDim)
-        .group(platformSelectGroup);
+        .group(platformSelectGroup)
+        .promptText('Platform Select');
 }
 
 function show_dapps_selector(ndx) {
@@ -55,7 +56,8 @@ function show_dapps_selector(ndx) {
 
     dc.selectMenu('#dapps-selector')
         .dimension(dappSelectDim)
-        .group(dappSelectGroup);
+        .group(dappSelectGroup)
+        .promptText('DApp Select');
 }
 
 function show_category_selector(ndx) {
@@ -66,7 +68,8 @@ function show_category_selector(ndx) {
 
     dc.selectMenu('#category-selector')
         .dimension(categorySelectDim)
-        .group(categorySelectGroup);
+        .group(categorySelectGroup)
+        .promptText('Category Select');
 }
 
     // First piechart with custom reduce to get the average amount of users per platform
