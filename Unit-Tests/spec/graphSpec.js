@@ -72,6 +72,14 @@ describe("Chart Tests", function() {
     it("should have a transition Duration", function() {
       expect(pieChart1.transitionDuration()).toEqual(900);
     });
+
+    it("should have a dimension", function() {
+      expect(pieChart1.dimension()).toBe(dappDim);
+    });
+
+    it("should have a group", function() {
+      expect(pieChart1.group()).toBe(averageUsersPerPlatform);
+    });
   });
 
   // build barchart
@@ -121,6 +129,14 @@ describe("Chart Tests", function() {
 
     it("should be responsive", function() {
       expect(barChart.useViewBoxResizing(true)).toBeTruthy();
+    });
+
+    it("should have a dimension", function() {
+      expect(barChart.dimension()).toBe(categoryDim);
+    });
+
+    it("should have a group", function() {
+      expect(barChart.group()).toBe(categoryGroup);
     });
   });
 
@@ -175,6 +191,14 @@ describe("Chart Tests", function() {
 
     it("should have a transition Duration", function() {
       expect(pieChart2.transitionDuration()).toEqual(900);
+    });
+
+    it("should have a dimension", function() {
+      expect(pieChart2.dimension()).toBe(weeklyTxDim);
+    });
+
+    it("should have a group", function() {
+      expect(pieChart2.group()).toBe(weeklyTxGroup);
     });
   });
 });
