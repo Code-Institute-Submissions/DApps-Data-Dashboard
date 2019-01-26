@@ -1,0 +1,65 @@
+/*--------------------------------------------Additional Styles*/
+html {
+  scroll-behavior: smooth;
+}
+
+h1, h2, p {
+  color: #fefff4;
+}
+
+main {
+    padding-top: 40px;
+}
+
+/*--------------------------------------------Card Styles*/
+.card {
+  margin-top: 60px;
+  background-color: #446e7e;
+}
+
+.card-header, .card-title {
+  color: #fefff4;
+}
+
+/*--------------------------------------------Chart Styles*/
+
+.custom-chart {
+  width: 100%;
+  height: 100%;
+}
+
+.fa-pie-chart,
+.fa-bar-chart,
+.fa-line-chart {
+  color: #7f861f;
+}
+
+.footer {
+  height: 80px;
+}
+
+.foot-nav {
+    padding-top: 20px;
+}
+
+/*--------------------------------------------Back to top*/
+
+.back-to-top {
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: 0;
+  }
+
+  .btn-primary {
+      color: #7f861f;
+      background: #002b36;
+  }
+/*--------------------------------------------Media Queries*/
+@media screen and (max-width: 1000px) {
+  .card {
+    margin-top: 30px;
+  }
+}
