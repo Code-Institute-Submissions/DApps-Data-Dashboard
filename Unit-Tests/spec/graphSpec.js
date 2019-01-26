@@ -201,4 +201,62 @@ describe("Chart Tests", function() {
       expect(pieChart2.group()).toBe(weeklyTxGroup);
     });
   });
+
+  // Build rowChart
+  function buildRowChart(id) {
+    var rowChart = dc.rowChart("#" + id);
+    rowChart
+      .dimension(dailyDim)
+      .group(dailyGroup)
+      .width(1000)
+      .height(350)
+      .x(d3.scale.linear().domain([6, 10]))
+      .transitionDuration(900);
+    rowChart.render();
+    return rowChart;
+  }
+
+  var dailyDim = ndx.dimension(dc.pluck("name"));
+  var dailyGroup = dailyDim.group().reduceSum(dc.pluck("users_24hr"));
+
+  describe("rowChart", function() {
+    var rowChart;
+    beforeEach(function() {
+      rowChart = buildRowChart("daily-users");
+      rowChart.dimension();
+      rowChart.render();
+    });
+
+    it("should exist", function() {
+      expect(show_daily_users_per_dapp(ndx)).not.toBeNull();
+    });
+
+    it("should have chart", function() {
+      expect(dc.hasChart(rowChart)).toBeTruthy();
+    });
+
+    it("should have a width", function() {
+      expect(rowChart.width()).toEqual(1000);
+    });
+
+    it("should have a height", function() {
+      expect(rowChart.height()).toEqual(350);
+    });
+
+    it("should have an linear scale", function() {
+      expect(rowChart.x(d3.scale.linear().domain([6, 10]))).toBeTruthy();
+    });
+
+    it("should be responsive", function() {
+      expect(rowChart.useViewBoxResizing(true)).toBeTruthy();
+    });
+
+    it("should have a dimension", function() {
+      expect(rowChart.dimension()).toBe(dailyDim);
+    });
+
+    it("should have a group", function() {
+      expect(rowChart.group()).toBe(dailyGroup);
+    });
+  });
 });
