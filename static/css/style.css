@@ -67,6 +67,7 @@ main {
   background: #002b36;
 }
 
+
 /*--------------------------------------------Media Queries*/
 @media screen and (max-width: 1000px) {
   .card {

@@ -19,7 +19,7 @@ div.dc-chart {
 }
 .dc-chart .pie-slice {
   fill: #fff;
-  font-size: 12px;
+  font-size: 0px;
   cursor: pointer;
 }
 .dc-chart .pie-slice.external {
