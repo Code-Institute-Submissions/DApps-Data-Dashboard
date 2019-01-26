@@ -1,6 +1,6 @@
 queue()
     // Load data
-    .defer(d3.csv, "data/dappsData.csv")
+    .defer(d3.csv, 'data/dappsData.csv')
     .await(makeGraphs);
 
 function makeGraphs(error, dappsData) {
@@ -33,38 +33,38 @@ function makeGraphs(error, dappsData) {
 }
 
     // Dashboard Colors
-    var dashboardColors = (["#003300", "#0000b3", "#01446a", "#330000", "#218AAB"]);
+var dashboardColors = (['#003300', '#0000b3', '#01446a', '#330000', '#218AAB']);
 
     // Selectors
 function show_platform_selector(ndx) {
 
-    var platformDim = ndx.dimension(dc.pluck("platform"));
+    var platformDim = ndx.dimension(dc.pluck('platform'));
 
     var platformSelectGroup = platformDim.group();
 
-    dc.selectMenu("#platform-selector")
+    dc.selectMenu('#platform-selector')
         .dimension(platformDim)
         .group(platformSelectGroup);
 }
 
 function show_dapps_selector(ndx) {
 
-    var dappSelectDim = ndx.dimension(dc.pluck("name"));
+    var dappSelectDim = ndx.dimension(dc.pluck('name'));
 
     var dappSelectGroup = dappSelectDim.group();
 
-    dc.selectMenu("#dapps-selector")
+    dc.selectMenu('#dapps-selector')
         .dimension(dappSelectDim)
         .group(dappSelectGroup);
 }
 
 function show_category_selector(ndx) {
 
-    var categorySelectDim = ndx.dimension(dc.pluck("category"));
+    var categorySelectDim = ndx.dimension(dc.pluck('category'));
 
     var categorySelectGroup = categorySelectDim.group();
 
-    dc.selectMenu("#category-selector")
+    dc.selectMenu('#category-selector')
         .dimension(categorySelectDim)
         .group(categorySelectGroup);
 }
@@ -72,7 +72,7 @@ function show_category_selector(ndx) {
     // First piechart with custom reduce to get the average amount of users per platform
 function show_user_per_platform_average(ndx) {
 
-    var dappDim = ndx.dimension(dc.pluck("platform"));
+    var dappDim = ndx.dimension(dc.pluck('platform'));
 
     var averageUsersPerPlatformGroup = dappDim.group().reduce(
 
@@ -97,7 +97,7 @@ function show_user_per_platform_average(ndx) {
         }
     );
 
-    var pieChart = dc.pieChart("#users-balance");
+    var pieChart = dc.pieChart('#users-balance');
 
     pieChart
         .width(200)
@@ -123,11 +123,11 @@ function show_user_per_platform_average(ndx) {
     // BarChart showing amount of users per category
 function show_categories_user_balance(ndx) {
 
-    var categoryDim = ndx.dimension(dc.pluck("category"));
+    var categoryDim = ndx.dimension(dc.pluck('category'));
 
-    var categoryGroup = categoryDim.group().reduceSum(dc.pluck("users_24hr"));
+    var categoryGroup = categoryDim.group().reduceSum(dc.pluck('users_24hr'));
 
-    var barChart = dc.barChart("#category-balance");
+    var barChart = dc.barChart('#category-balance');
 
     barChart
         .width(600)
@@ -151,11 +151,11 @@ function show_categories_user_balance(ndx) {
     // Second PieChart showing the amount of transactions per platform over a 7 day period
 function show_weekly_transactions_per_platform(ndx) {
 
-    var weeklyTxDim = ndx.dimension(dc.pluck("platform"));
+    var weeklyTxDim = ndx.dimension(dc.pluck('platform'));
 
-    var weeklyTxGroup = weeklyTxDim.group().reduceSum(dc.pluck("weekly_txs"));
+    var weeklyTxGroup = weeklyTxDim.group().reduceSum(dc.pluck('weekly_txs'));
 
-    var pieChart1 = dc.pieChart("#weekly-transactions");
+    var pieChart1 = dc.pieChart('#weekly-transactions');
 
     pieChart1
         .width(200)
@@ -172,11 +172,11 @@ function show_weekly_transactions_per_platform(ndx) {
     // RowChart showing the amount of users per DApp over 24hr period
 function show_daily_users_per_dapp(ndx) {
 
-    var dailyDim = ndx.dimension(dc.pluck("name"));
+    var dailyDim = ndx.dimension(dc.pluck('name'));
 
-    var dailyGroup = dailyDim.group().reduceSum(dc.pluck("users_24hr"));
+    var dailyGroup = dailyDim.group().reduceSum(dc.pluck('users_24hr'));
 
-    var rowChart = dc.rowChart("#daily-users");
+    var rowChart = dc.rowChart('#daily-users');
 
     rowChart
         .width(1000)
@@ -195,7 +195,7 @@ function show_daily_users_per_dapp(ndx) {
     // ScatterPlot showing the amount of users and transactions over 24hr period
 function show_users_24hr_transactions(ndx) {
 
-    var usersDim = ndx.dimension(dc.pluck("users_24hr"));
+    var usersDim = ndx.dimension(dc.pluck('users_24hr'));
 
     //  Returning all data required for chart and chart title function
     var transactionsDim = ndx.dimension(function(d) {
@@ -208,7 +208,7 @@ function show_users_24hr_transactions(ndx) {
     var minUsers = usersDim.bottom(1)[0].users_24hr;
     var maxUsers = usersDim.top(1)[0].users_24hr;
 
-    var scatterPlotChart = dc.scatterPlot("#daily-transactions");
+    var scatterPlotChart = dc.scatterPlot('#daily-transactions');
 
     scatterPlotChart
         .width(1000)
@@ -218,10 +218,10 @@ function show_users_24hr_transactions(ndx) {
         .brushOn(false)
         .symbolSize(10)
         .clipPadding(12)
-        .yAxisLabel("Transactions")
-        .xAxisLabel("Users")
+        .yAxisLabel('Transactions')
+        .xAxisLabel('Users')
         .title(function(d) {
-            return "Over 24hrs " + d.key[2] + " had " + d.key[0] + " users and " + d.key[1] + " transactions.";
+            return 'Over 24hrs ' + d.key[2] + ' had ' + d.key[0] + ' users and ' + d.key[1] + ' transactions.';
         })
         .colorAccessor(function(d) {
             return d.key[3];
@@ -237,7 +237,7 @@ function show_users_24hr_transactions(ndx) {
     // Stacked Chart showing daily and weekly transactions by platform
 function show_dapps_daily_weekly_transactions(ndx) {
 
-    var dappNameDim = ndx.dimension(dc.pluck("name"));
+    var dappNameDim = ndx.dimension(dc.pluck('name'));
 
     var dappDailyTransactionDim = dappNameDim.group().reduceSum(function(d){
         return d.txs_24hr;
@@ -247,7 +247,7 @@ function show_dapps_daily_weekly_transactions(ndx) {
         return d.weekly_txs;
     });
 
-    var stackedChart = dc.barChart("#dapps-transactions");
+    var stackedChart = dc.barChart('#dapps-transactions');
 
     stackedChart
         .width(1000)
@@ -265,13 +265,13 @@ function show_dapps_daily_weekly_transactions(ndx) {
         .yAxis()
         .ticks(10);
 
-        stackedChart.on("renderlet", function (stackedChart) {
+        stackedChart.on('renderlet', function (stackedChart) {
             // Rotate xAxis Labels
             stackedChart
-                .selectAll("g.x text")
-                .attr("dx", "-12")
-                .attr("dy", "-5")
-                .attr("transform", "rotate(-90)")
-                .style("text-anchor", "end");
+                .selectAll('g.x text')
+                .attr('dx', '-12')
+                .attr('dy', '-5')
+                .attr('transform', 'rotate(-90)')
+                .style('text-anchor', 'end');
         });
 }

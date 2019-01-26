@@ -1,9 +1,9 @@
-describe("Chart Tests", function() {
+describe('Chart Tests', function() {
   var ndx = crossfilter();
 
   // Build pieChart1
   function buildPieChart(id) {
-    var pieChart1 = dc.pieChart("#" + id);
+    var pieChart1 = dc.pieChart('#' + id);
     pieChart1
       .dimension(dappDim)
       .group(averageUsersPerPlatform)
@@ -15,7 +15,7 @@ describe("Chart Tests", function() {
     return pieChart1;
   }
 
-  var dappDim = ndx.dimension(dc.pluck("platform"));
+  var dappDim = ndx.dimension(dc.pluck('platform'));
   var averageUsersPerPlatform = dappDim.group().reduce(
     function(p, v) {
       p.count++;
@@ -36,55 +36,55 @@ describe("Chart Tests", function() {
     }
   );
 
-  describe("pieChart1", function() {
+  describe('pieChart1', function() {
     var pieChart1;
 
     beforeEach(function() {
-      pieChart1 = buildPieChart("users-balance");
+      pieChart1 = buildPieChart('users-balance');
       pieChart1.dimension();
       pieChart1.render();
     });
 
-    it("should exist", function() {
+    it('should exist', function() {
       expect(show_user_per_platform_average(ndx)).not.toBeNull();
     });
 
-    it("should have chart", function() {
+    it('should have chart', function() {
       expect(dc.hasChart(pieChart1)).toBeTruthy();
     });
 
-    it("should have a width", function() {
+    it('should have a width', function() {
       expect(pieChart1.width()).toEqual(200);
     });
 
-    it("should have a height", function() {
+    it('should have a height', function() {
       expect(pieChart1.height()).toEqual(200);
     });
 
-    it("should have an innerRadius", function() {
+    it('should have an innerRadius', function() {
       expect(pieChart1.innerRadius()).toEqual(30);
     });
 
-    it("should be responsive", function() {
+    it('should be responsive', function() {
       expect(pieChart1.useViewBoxResizing(true)).toBeTruthy();
     });
 
-    it("should have a transition Duration", function() {
+    it('should have a transition Duration', function() {
       expect(pieChart1.transitionDuration()).toEqual(900);
     });
 
-    it("should have a dimension", function() {
+    it('should have a dimension', function() {
       expect(pieChart1.dimension()).toBe(dappDim);
     });
 
-    it("should have a group", function() {
+    it('should have a group', function() {
       expect(pieChart1.group()).toBe(averageUsersPerPlatform);
     });
   });
 
   // build barchart
   function buildBarChart(id) {
-    var barChart = dc.barChart("#" + id);
+    var barChart = dc.barChart('#' + id);
     barChart
       .dimension(categoryDim)
       .group(categoryGroup)
@@ -95,54 +95,54 @@ describe("Chart Tests", function() {
     return barChart;
   }
 
-  var categoryDim = ndx.dimension(dc.pluck("category"));
-  var categoryGroup = categoryDim.group().reduceSum(dc.pluck("users_24hr"));
+  var categoryDim = ndx.dimension(dc.pluck('category'));
+  var categoryGroup = categoryDim.group().reduceSum(dc.pluck('users_24hr'));
 
-  describe("barChart", function() {
+  describe('barChart', function() {
     var barChart;
 
     beforeEach(function() {
-      barChart = buildBarChart("category-balance");
+      barChart = buildBarChart('category-balance');
       barChart.dimension();
       barChart.render();
     });
 
-    it("should exist", function() {
+    it('should exist', function() {
       expect(show_categories_user_balance(ndx)).not.toBeNull();
     });
 
-    it("should have chart", function() {
+    it('should have chart', function() {
       expect(dc.hasChart(barChart)).toBeTruthy();
     });
 
-    it("should have a width", function() {
+    it('should have a width', function() {
       expect(barChart.width()).toEqual(600);
     });
 
-    it("should have a height", function() {
+    it('should have a height', function() {
       expect(barChart.height()).toEqual(300);
     });
 
-    it("should have an ordinal scale", function() {
+    it('should have an ordinal scale', function() {
       expect(barChart.x(d3.scale.ordinal())).toBeTruthy();
     });
 
-    it("should be responsive", function() {
+    it('should be responsive', function() {
       expect(barChart.useViewBoxResizing(true)).toBeTruthy();
     });
 
-    it("should have a dimension", function() {
+    it('should have a dimension', function() {
       expect(barChart.dimension()).toBe(categoryDim);
     });
 
-    it("should have a group", function() {
+    it('should have a group', function() {
       expect(barChart.group()).toBe(categoryGroup);
     });
   });
 
   // Build pieChart2
   function buildPieChart2(id) {
-    var pieChart2 = dc.pieChart("#" + id);
+    var pieChart2 = dc.pieChart('#' + id);
     pieChart2
       .dimension(weeklyTxDim)
       .group(weeklyTxGroup)
@@ -154,57 +154,57 @@ describe("Chart Tests", function() {
     return pieChart2;
   }
 
-  var weeklyTxDim = ndx.dimension(dc.pluck("platform"));
-  var weeklyTxGroup = weeklyTxDim.group().reduceSum(dc.pluck("weekly_txs"));
+  var weeklyTxDim = ndx.dimension(dc.pluck('platform'));
+  var weeklyTxGroup = weeklyTxDim.group().reduceSum(dc.pluck('weekly_txs'));
 
-  describe("pieChart2", function() {
+  describe('pieChart2', function() {
     var pieChart2;
     beforeEach(function() {
-      pieChart2 = buildPieChart2("weekly-transactions");
+      pieChart2 = buildPieChart2('weekly-transactions');
       pieChart2.dimension();
       pieChart2.render();
     });
 
-    it("should exist", function() {
+    it('should exist', function() {
       expect(show_weekly_transactions_per_platform(ndx)).not.toBeNull();
     });
 
-    it("should have chart", function() {
+    it('should have chart', function() {
       expect(dc.hasChart(pieChart2)).toBeTruthy();
     });
 
-    it("should have a width", function() {
+    it('should have a width', function() {
       expect(pieChart2.width()).toEqual(200);
     });
 
-    it("should have a height", function() {
+    it('should have a height', function() {
       expect(pieChart2.height()).toEqual(200);
     });
 
-    it("should have externalRadiusPadding", function() {
+    it('should have externalRadiusPadding', function() {
       expect(pieChart2.externalRadiusPadding()).toEqual(25);
     });
 
-    it("should be responsive", function() {
+    it('should be responsive', function() {
       expect(pieChart2.useViewBoxResizing(true)).toBeTruthy();
     });
 
-    it("should have a transition Duration", function() {
+    it('should have a transition Duration', function() {
       expect(pieChart2.transitionDuration()).toEqual(900);
     });
 
-    it("should have a dimension", function() {
+    it('should have a dimension', function() {
       expect(pieChart2.dimension()).toBe(weeklyTxDim);
     });
 
-    it("should have a group", function() {
+    it('should have a group', function() {
       expect(pieChart2.group()).toBe(weeklyTxGroup);
     });
   });
 
   // Build rowChart
   function buildRowChart(id) {
-    var rowChart = dc.rowChart("#" + id);
+    var rowChart = dc.rowChart('#' + id);
     rowChart
       .dimension(dailyDim)
       .group(dailyGroup)
@@ -216,46 +216,46 @@ describe("Chart Tests", function() {
     return rowChart;
   }
 
-  var dailyDim = ndx.dimension(dc.pluck("name"));
-  var dailyGroup = dailyDim.group().reduceSum(dc.pluck("users_24hr"));
+  var dailyDim = ndx.dimension(dc.pluck('name'));
+  var dailyGroup = dailyDim.group().reduceSum(dc.pluck('users_24hr'));
 
-  describe("rowChart", function() {
+  describe('rowChart', function() {
     var rowChart;
     beforeEach(function() {
-      rowChart = buildRowChart("daily-users");
+      rowChart = buildRowChart('daily-users');
       rowChart.dimension();
       rowChart.render();
     });
 
-    it("should exist", function() {
+    it('should exist', function() {
       expect(show_daily_users_per_dapp(ndx)).not.toBeNull();
     });
 
-    it("should have chart", function() {
+    it('should have chart', function() {
       expect(dc.hasChart(rowChart)).toBeTruthy();
     });
 
-    it("should have a width", function() {
+    it('should have a width', function() {
       expect(rowChart.width()).toEqual(1000);
     });
 
-    it("should have a height", function() {
+    it('should have a height', function() {
       expect(rowChart.height()).toEqual(350);
     });
 
-    it("should have an linear scale", function() {
+    it('should have an linear scale', function() {
       expect(rowChart.x(d3.scale.linear().domain([6, 10]))).toBeTruthy();
     });
 
-    it("should be responsive", function() {
+    it('should be responsive', function() {
       expect(rowChart.useViewBoxResizing(true)).toBeTruthy();
     });
 
-    it("should have a dimension", function() {
+    it('should have a dimension', function() {
       expect(rowChart.dimension()).toBe(dailyDim);
     });
 
-    it("should have a group", function() {
+    it('should have a group', function() {
       expect(rowChart.group()).toBe(dailyGroup);
     });
   });
