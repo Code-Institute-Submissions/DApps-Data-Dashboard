@@ -90,19 +90,24 @@
       <section class="section selectors">
         <div class="container">
           <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-4">
-              <p>Platform Filter</p>
+            <div class="col-xs-12 col-sm-12 col-md-3">
               <div id="platform-selector"></div>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-4">
-              <p>DApp Filter</p>
+            <div class="col-xs-12 col-sm-12 col-md-3">
               <div id="dapps-selector"></div>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-4">
-              <p>Category Filter</p>
+            <div class="col-xs-12 col-sm-12 col-md-3">
               <div id="category-selector"></div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-3">
+              <button type="button" class="btn">
+                <a href="javascript:dc.filterAll(); dc.renderAll();"
+                  >Reset All</a
+                >
+              </button>
             </div>
           </div>
         </div>
@@ -219,13 +224,23 @@
 
     <!-- Footer -->
     <footer class="footer">
+      <div class="col-xs-12 col-sm-12 col-md-3">
+        <button type="button" class="btn">
+          <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
+        </button>
+      </div>
+
       <nav class="nav justify-content-center foot">
         <a class="nav-link active" href="#3-charts">User/Category</a>
         <a class="nav-link" href="#rowchart">DApps Users</a>
         <a class="nav-link" href="#scatterchart">User Transactions</a>
         <a class="nav-link" href="#stackedchart">DApp Transactions</a>
       </nav>
-      <h5 class="text-center foot-text">Design<br><small><i>by <a href="https://github.com/John-E5">John Ennis</a></i></small></h5>
+      <h5 class="text-center foot-text">
+        Design<br /><small
+          ><i>by <a href="https://github.com/John-E5">John Ennis</a></i></small
+        >
+      </h5>
     </footer>
 
     <!-- Back to top button -->
