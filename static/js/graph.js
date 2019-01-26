@@ -120,6 +120,8 @@ function show_user_per_platform_average(ndx) {
         })
         .transitionDuration(900)
         .ordinalColors(dashboardColors)
+        .title(function(d) {
+            return d.key + " had " + d.value.total + " users over a 24hr period";})
         .legend(dc.legend().x(0).y(185).horizontal(true).itemHeight(13).gap(5));
 }
 
@@ -142,6 +144,8 @@ function show_categories_user_balance(ndx) {
         .transitionDuration(900)
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
+        .title(function(d) {
+            return d.key + " had " + d.value + "  users over a 24hr period";})
         .elasticY(true)
         .colorAccessor(function(d) {
             return d.value;
@@ -168,6 +172,8 @@ function show_weekly_transactions_per_platform(ndx) {
         .externalRadiusPadding(25)
         .useViewBoxResizing(true)
         .transitionDuration(900)
+        .title(function(d) {
+            return d.key + " had " + d.value + " transactions over a 7 Day period";})
         .ordinalColors(dashboardColors)
         .legend(dc.legend().x(0).y(185).horizontal(true).itemHeight(13).gap(5));
 }
@@ -190,6 +196,8 @@ function show_daily_users_per_dapp(ndx) {
         .group(dailyGroup)
         .elasticX(true)
         .rowsCap(15)
+        .title(function(d) {
+            return d.key + " had " + d.value + "  users over a 24hr period";})
         .othersGrouper(false)
         .ordinalColors(dashboardColors)
         .transitionDuration(900);
