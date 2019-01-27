@@ -1,15 +1,37 @@
 # DApps Data Dashboard
 
-Second Milestone project for code institute full stack developer course
+Second Milestone project for code institute full stack developer course interactive frontend development.
+It is a single page responsive application visualizing data of decentralised applications statistics.
+
+### The Project Brief:
+
+#### CREATE A DATA DASHBOARD
+
+* Build a data dashboard that visualizes a dataset of your choice
+* Your data can be stored locally (e.g., in a js file) or sourced from an API
+* Visualise your data using D3.js and dc.js
+
 
 ## UX
- 
-Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
-- As a user type, I want to perform an action, so that I can achieve a goal.
+This App was developed for users looking for statistics on decentralised applications(DApps) that run on blockchain platforms.
+The platforms I picked were Ethereum(ETH), EOSIO(EOS) and Tron(TRX), I selected the top 15 DApps on each platform
+and built a dataset of the platforms, names, category, amount of users over 24hr period and the amount daily and weekly transactions(txs) of each DApp.
 
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
+### Style:
+For this app i picked a darker theme from [bootswatch](https://bootswatch.com/sandstone/) called sandstone which included fonts, colors and theming.
+DC css file was also used for styling charts, I used some custom css in styles.css to override some of the styles in the bootswatch theme and edited
+dc.min.css to change values of the chart styles.
+I used a dark color for the body background and a lighter shade for the cards that hold the charts.
+
+### User Stories
+- As a new or experienced user to blockchain and DApps i want to find information on:
+    * Amount of users per platform
+    * DApps categories statistics
+    * Amount of weekly transactions per platform
+    * Amount of daily users per DApp
+    * Amount of daily users and the daily transactions per DApp
+    * Amount of daily/weekly transactions per DApp
 
 ## Features
 
