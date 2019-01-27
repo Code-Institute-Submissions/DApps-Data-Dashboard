@@ -9,13 +9,10 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="static/css/bootstrap.min.css" />
     <link rel="stylesheet" href="static/css/dc.min.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="static/css/style.css" />
   </head>
+
   <body data-spy="scroll" data-target=".navbar" data-offset="50">
     <!-- Nav -->
     <nav class="navbar navbar-expand-md navbar-dark">
@@ -56,6 +53,7 @@
         </ul>
       </div>
     </nav>
+    <!-- /.Nav -->
 
     <!-- Main -->
     <main>
@@ -67,7 +65,9 @@
               <h1 class="section-heading text-center">DApps Statistics</h1>
             </div>
           </div>
+          <!-- /.Main Title -->
 
+          <!-- Intro Text -->
           <div class="row">
             <div class="col-xs-12 col-sm-12 section-text text-center">
               <p class="section-banner">
@@ -84,6 +84,8 @@
             </div>
           </div>
         </div>
+          <!-- /.Intro Text -->
+
       </section>
 
       <!-- Selectors/Filters -->
@@ -112,11 +114,13 @@
           </div>
         </div>
       </section>
+      <!-- /.Selectors/Filters -->
 
       <!-- First Row Of Charts- Pie Chart - Bar Chart - Pie Chart 1 -->
       <section id="charts-row" class="section">
         <div class="container-fluid">
           <div class="row">
+
             <!-- Pie Chart -->
             <div class="col-xs-12 col-sm-12 col-md-3 card">
               <div class="card-header text-center text-uppercase">
@@ -130,6 +134,7 @@
                 Average amount of users per platform
               </p>
             </div>
+            <!-- /.Pie Chart -->
 
             <!-- Bar Chart -->
             <div class="col-xs-12 col-sm-12 col-md-6 card">
@@ -142,6 +147,7 @@
               </div>
               <p class="card-footer text-center">DApps Category Balance</p>
             </div>
+            <!-- /.Bar Chart -->
 
             <!-- Pie Chart 1 -->
             <div class="col-xs-12 col-sm-12 col-md-3 card">
@@ -159,6 +165,8 @@
           </div>
         </div>
       </section>
+            <!-- /.Pie Chart 1 -->
+      <!-- /.End Chart row -->
 
       <!-- Row Chart -->
       <section id="rowchart" class="section">
@@ -179,6 +187,7 @@
           </div>
         </div>
       </section>
+      <!-- /.Row Chart -->
 
       <!-- ScatterPlot Chart -->
       <section id="scatterchart" class="section">
@@ -199,6 +208,7 @@
           </div>
         </div>
       </section>
+      <!-- /.ScatterPlot Chart -->
 
       <!-- Stacked Chart -->
       <section id="stackedchart" class="section">
@@ -220,7 +230,10 @@
           </div>
         </div>
       </section>
+      <!-- /.Stacked Chart -->
+
     </main>
+    <!-- /.Main -->
 
     <!-- Footer -->
     <footer class="footer">
@@ -229,19 +242,22 @@
           <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
         </button>
       </div>
-
+      <!-- Footer Nav -->
       <nav class="nav justify-content-center foot">
         <a class="nav-link active" href="charts-row">User/Category</a>
         <a class="nav-link" href="#rowchart">DApps Users</a>
         <a class="nav-link" href="#scatterchart">User Transactions</a>
         <a class="nav-link" href="#stackedchart">DApp Transactions</a>
       </nav>
+      <!-- /.Footer Nav -->
+
       <h5 class="text-center foot-text">
         Design<br /><small
           ><i>by <a href="https://github.com/John-E5">John Ennis</a></i></small
         >
       </h5>
     </footer>
+    <!-- /.Footer -->
 
     <!-- Back to top button -->
     <a
@@ -254,24 +270,14 @@
       data-placement="left"
       ><i class="fa fa-chevron-up" aria-hidden="true"></i
     ></a>
+    <!-- /.Back to top button -->
 
-    <!-- Scripts -->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-      crossorigin="anonymous"
-    ></script>
+    <!-- Scripts Jquery, Popper.js, Bootstrap 4-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
+    <!-- Scripts D3, Crossfilter, Dc.js, Queue.js, Graph.js -->
     <script type="text/javascript" src="static/js/d3.min.js"></script>
     <script type="text/javascript" src="static/js/crossfilter.min.js"></script>
     <script type="text/javascript" src="static/js/dc.min.js"></script>
@@ -301,5 +307,6 @@
         });
       });
     </script>
+    <!-- /.Scripts -->
   </body>
 </html>
