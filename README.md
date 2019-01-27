@@ -58,6 +58,30 @@ I used a dark color for the body background and a lighter shade for the cards th
 2. [Tablet](https://camo.githubusercontent.com/fcb297dc9f86630d6f1a2966ef585af4655ed237/68747470733a2f2f6170702e6769746b72616b656e2e636f6d2f6170692f676c6f2f626f617264732f3563333330653838666566333839303030666534333033342f6174746163686d656e74732f356334646365613039323638326630303066323336663862)
 3. [Mobile](https://camo.githubusercontent.com/58fd5cf3d9d14f65a45feb366f1d8d02b8dd911c/68747470733a2f2f6170702e6769746b72616b656e2e636f6d2f6170692f676c6f2f626f617264732f3563333330653838666566333839303030666534333033342f6174746163686d656e74732f356334646365613039323638326630303066323336663931)
 
+### Project Management
+
+For this project [Git Kraken/GloBoards](https://www.gitkraken.com/) was used as a task/issue tracker board which is synced
+to the project repo on github.
+Sections included - issues, to Do, in Progress, to be reviewed, completed, bugs.
+
+#### Usage
+* When starting the project:
+    1. Create cards
+    2. Add descriptions
+    3. Add assignee
+    4. Add labels
+    5. Add tasks
+    6. Add files and comments where needed
+
+* During the Project:
+    1. Move card from ToDo to in Progress
+    2. Check card for required tasks
+    3. Complete task and tick off list
+    4. Once all tasks completed move card to be reviewed section
+    5. once reviewed move to complete and close issue
+
+##### See screenshots for reference:
+     ![Glo-Board-1](https://camo.githubusercontent.com/f492ce38de7bfa60d50ff496ed3dafc9705b4ebf/68747470733a2f2f6170702e6769746b72616b656e2e636f6d2f6170692f676c6f2f626f617264732f3563333330653838666566333839303030666534333033342f6174746163686d656e74732f356334396331383739323638326630303066323263626437)
 
 
 ## Features
