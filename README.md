@@ -33,6 +33,33 @@ I used a dark color for the body background and a lighter shade for the cards th
     * Amount of daily users and the daily transactions per DApp
     * Amount of daily/weekly transactions per DApp
 
+#### Home Section Contains:
+1. Dashboard introduction paragraph
+2. Links in paragraph to read more about the blockchain platforms
+3. Selectors for filtering the dataset
+
+#### User/Category Section Contains:
+* 3 Charts in a row
+    1. Platform Users Breakdown pieChart
+    2. Categories Stats barChart
+    3. Weekly Transactions pieChart
+
+#### DApps Users Section Contains:
+* Daily DApps Users rowChart
+
+#### Daily User Transactions Section Contains:
+* Daily User Transactions scatterplotChart
+
+#### DApps Daily and Weekly Transactions Section Contains:
+* DApps Daily and Weekly Transactions stackedbarChart
+
+### Mock-Ups
+1. [Desktop](https://camo.githubusercontent.com/fd8931475416b2fc463dd1b15323ad8bdef33643/68747470733a2f2f6170702e6769746b72616b656e2e636f6d2f6170692f676c6f2f626f617264732f3563333330653838666566333839303030666534333033342f6174746163686d656e74732f356334646365613039323638326630303066323336663865)
+2. [Tablet](https://camo.githubusercontent.com/fcb297dc9f86630d6f1a2966ef585af4655ed237/68747470733a2f2f6170702e6769746b72616b656e2e636f6d2f6170692f676c6f2f626f617264732f3563333330653838666566333839303030666534333033342f6174746163686d656e74732f356334646365613039323638326630303066323336663862)
+3. [Mobile](https://camo.githubusercontent.com/58fd5cf3d9d14f65a45feb366f1d8d02b8dd911c/68747470733a2f2f6170702e6769746b72616b656e2e636f6d2f6170692f676c6f2f626f617264732f3563333330653838666566333839303030666534333033342f6174746163686d656e74732f356334646365613039323638326630303066323336663931)
+
+
+
 ## Features
 
 In this section, you should go over the different parts of your project, and describe each in a sentence or so.
