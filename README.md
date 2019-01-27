@@ -3,9 +3,8 @@
 Second Milestone project for code institute full stack developer course interactive frontend development.
 It is a single page responsive application visualizing data of decentralised applications statistics.
 
-### The Project Brief:
-
-#### CREATE A DATA DASHBOARD
+#### The Project Brief:
+##### CREATE A DATA DASHBOARD
 
 * Build a data dashboard that visualizes a dataset of your choice
 * Your data can be stored locally (e.g., in a js file) or sourced from an API
@@ -18,13 +17,15 @@ This App was developed for users looking for statistics on decentralised applica
 The platforms I picked were Ethereum(ETH), EOSIO(EOS) and Tron(TRX), I selected the top 15 DApps on each platform
 and built a dataset of the platforms, names, category, amount of users over 24hr period and the amount daily and weekly transactions(txs) of each DApp.
 
-### Style:
+### Style
+
 For this app i picked a darker theme from [bootswatch](https://bootswatch.com/sandstone/) called sandstone which included fonts, colors and theming.
 DC css file was also used for styling charts, I used some custom css in styles.css to override some of the styles in the bootswatch theme and edited
 dc.min.css to change values of the chart styles.
 I used a dark color for the body background and a lighter shade for the cards that hold the charts.
 
 ### User Stories
+
 - As a new or experienced user to blockchain and DApps i want to find information on:
     * Amount of users per platform
     * DApps categories statistics
@@ -34,46 +35,108 @@ I used a dark color for the body background and a lighter shade for the cards th
     * Amount of daily/weekly transactions per DApp
 
 #### Home Section Contains:
+
 1. Dashboard introduction paragraph
 2. Links in paragraph to read more about the blockchain platforms
 3. Selectors for filtering the dataset
 
 #### User/Category Section Contains:
+
 * 3 Charts in a row
     1. Platform Users Breakdown pieChart
     2. Categories Stats barChart
     3. Weekly Transactions pieChart
 
 #### DApps Users Section Contains:
+
 * Daily DApps Users rowChart
 
 #### Daily User Transactions Section Contains:
+
 * Daily User Transactions scatterplotChart
 
 #### DApps Daily and Weekly Transactions Section Contains:
+
 * DApps Daily and Weekly Transactions stackedbarChart
 
 ### Mock-Ups
+
 1. [Desktop](https://camo.githubusercontent.com/fd8931475416b2fc463dd1b15323ad8bdef33643/68747470733a2f2f6170702e6769746b72616b656e2e636f6d2f6170692f676c6f2f626f617264732f3563333330653838666566333839303030666534333033342f6174746163686d656e74732f356334646365613039323638326630303066323336663865)
 2. [Tablet](https://camo.githubusercontent.com/fcb297dc9f86630d6f1a2966ef585af4655ed237/68747470733a2f2f6170702e6769746b72616b656e2e636f6d2f6170692f676c6f2f626f617264732f3563333330653838666566333839303030666534333033342f6174746163686d656e74732f356334646365613039323638326630303066323336663862)
 3. [Mobile](https://camo.githubusercontent.com/58fd5cf3d9d14f65a45feb366f1d8d02b8dd911c/68747470733a2f2f6170702e6769746b72616b656e2e636f6d2f6170692f676c6f2f626f617264732f3563333330653838666566333839303030666534333033342f6174746163686d656e74732f356334646365613039323638326630303066323336663931)
 
+### Project Management
 
+For this project [Git Kraken/GloBoards](https://www.gitkraken.com/) was used as a task/issue tracker board which is synced
+to the project repo on github.
+Sections included - issues, to Do, in Progress, to be reviewed, completed, bugs.
+
+#### Usage
+
+* When starting the project:
+    1. Create cards
+    2. Add descriptions
+    3. Add assignee
+    4. Add labels
+    5. Add tasks
+    6. Add files and comments where needed
+
+* During the Project:
+    1. Move card from ToDo to in Progress
+    2. Check card for required tasks
+    3. Complete task and tick off list
+    4. Once all tasks completed move card to be reviewed section
+    5. once reviewed move to complete and close issue
+
+##### See screenshots for reference:
+
+1. [Glo-Board-1](https://camo.githubusercontent.com/f492ce38de7bfa60d50ff496ed3dafc9705b4ebf/68747470733a2f2f6170702e6769746b72616b656e2e636f6d2f6170692f676c6f2f626f617264732f3563333330653838666566333839303030666534333033342f6174746163686d656e74732f356334396331383739323638326630303066323263626437)
+2. [Glo-Board-2](https://camo.githubusercontent.com/fd6a1d8690c757d16da890a7a3e87e0901b53036/68747470733a2f2f6170702e6769746b72616b656e2e636f6d2f6170692f676c6f2f626f617264732f3563333330653838666566333839303030666534333033342f6174746163686d656e74732f356334396331383739323638326630303066323263626461)
+3. [Glo-Board-3](https://camo.githubusercontent.com/ecd591dbc4fcf0f0474875351d47781d5d3bd265/68747470733a2f2f6170702e6769746b72616b656e2e636f6d2f6170692f676c6f2f626f617264732f3563333330653838666566333839303030666534333033342f6174746163686d656e74732f356334396331383739323638326630303066323263626464)
+4. [Glo-Board-4](https://camo.githubusercontent.com/73cd00bf1eea1877c75d94f150382b2f609aeba0/68747470733a2f2f6170702e6769746b72616b656e2e636f6d2f6170692f676c6f2f626f617264732f3563333330653838666566333839303030666534333033342f6174746163686d656e74732f356334396331383739323638326630303066323263626434)
 
 ## Features
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
- 
-### Existing Features
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
+### Desktop/Tablet View
 
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
+#### Home
+- The home section features a transparent navbar with heading title to the left and section nav links to right.
+- It also features an intoduction paragraph with links to different blockchain platforms.
+- Selectors are located below the paragraph and allow you to filter the different data points.
+- Once a selection is made it filters the charts as per selection.
+- You can reset the filters by clicking the reset all button.
 
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+#### User/Category
+- This sections has a row of 3 charts
+    1. piechart with platfrom legend to filter the different platforms data.
+    2. barchart showing the different categories data.
+    3. piechart with legend to filter the platform data.
+
+#### DApps Users
+- This section has a rowchart showing the different dapps and allows you to filter the different data points.
+
+#### Daily User Transactions
+- This section features a scatterplot chart showing the amount of user tranactions per dapp and is filtered when selecting a
+a filter from the selectors in the home section.
+
+#### DApps Tranactions
+- This section features a stacked barchart showing the daily and weekly transactions by dapp name and is filter by the selectors
+in the home section or by clicking the bar sections on the chart.
+
+#### Footer
+- The footer section features a reset all button for the filters and nav items to navigate the sections.
+
+### Mobile View
+- When viewing on mobile the charts are positioned on top of each other to help the responsive behavior of the site.
+- It also features a hamburger dropdown menu in the navbar, once clicked a dropdown menu appears containing the nav list items.
+
+- All views feature a back to top button for ease of navigation.
+- The button fades in and out as you scroll the page once clicked it returns you to home section using jquery script for smooth scrolling effect.
+
 
 ### Features Left to Implement
-- Another feature idea
+- Add a loader to the dashboard to display while page loads.
+- Add more unit tests to get better code coverage.
 
 ## Technologies Used
 
