@@ -1,6 +1,7 @@
-describe('Chart Tests', function() {
-  var ndx = crossfilter();
+// Global Variable for tests
+var ndx = crossfilter();
 
+describe('Chart Tests', function() {
   // Build pieChart1
   function buildPieChart(id) {
     var pieChart1 = dc.pieChart('#' + id);
@@ -258,5 +259,19 @@ describe('Chart Tests', function() {
     it('should have a group', function() {
       expect(rowChart.group()).toBe(dailyGroup);
     });
+  });
+});
+
+describe('Selectors Tests', function() {
+  it('Platform selector should exist', function() {
+    expect(show_platform_selector(ndx)).not.toBeNull();
+  });
+
+  it('Dapps selector should exist', function() {
+    expect(show_dapps_selector(ndx)).not.toBeNull();
+  });
+
+  it('Dapps selector should exist', function() {
+    expect(show_category_selector(ndx)).not.toBeNull();
   });
 });
