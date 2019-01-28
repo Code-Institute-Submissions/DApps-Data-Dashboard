@@ -191,44 +191,155 @@ For this project the following Technologies were used:
 
 ## Testing
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+### Unit Tests
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
+Jasmine.js was the framework used for the unit tests, I started by testing the piechart function, when adding tests for width, height i realised i would have to
+declare some variables and build parts of the charts in [graphSpec.js](https://github.com/John-E5/DApps-Data-Dashboard/blob/master/Unit-Tests/spec/graphSpec.js)
+to be able to test the various parts of the charts.
+I added 37 spec tests checking some of the charts which all pass.
+The results can be viewed in [specRunner.html](https://john-e5.github.io/DApps-Data-Dashboard/Unit-Tests/SpecRunner.html)
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
+### Manual Testing
 
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
+Testing for this project was done with several browsers and devices.
 
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+#### Browsers
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
+##### Mobile
+- Firefox
+- Chrome
+- Safari
+- Opera
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+##### Desktop
+- Firefox
+- Chrome
+- Opera
+- Edge
+
+#### Devices
+- Hp Laptop
+- Lenovo Laptop
+- Huawei Nexus 6P android phone
+- Samsung Galaxy Tab 4
+- Samsung Galaxy J3
+- Iphone 6s
+- Iphone 7
+- Ipad AIR
+
+Firefox developer edition and chrome dev-tools were used during development and for manual testing of the site responsiveness and checking if the
+charts rendered and filters worked correctly.
+The devices and browsers listed above were used to test the app on different screen sizes and devices.
+
+#### To Manually Test
+
+##### Selectors Testing
+* Platform Selector
+    1. Go to Home section
+    2. Click platform select
+    3. Click a platform name
+    4. check charts to see filter applied
+
+* DApp Selector
+    1. Go to Home section
+    2. Click DApp select
+    3. Click a DApp name
+    4. Check charts to see filter applied
+
+* Category Selector
+    1. Go to Home section
+    2. Click Category select
+    3. Click a Category name
+    4. Check charts to see filter applied
+
+* Reset Filters
+    1. Go to Home/Footer Section
+    2. Apply any filter
+    3. Click Reset All
+    4. See chart filters reset
+
+
+##### Charts Testing
+
+* Platform Users Breakdown Piechart
+    1. Go to User/Category section
+    2. Click Legend item or piechart slice
+    3. Check charts to see filter applied
+
+* Categories Stats Barchart
+    1. Go to User/Category section
+    2. Click category bar
+    3. Check charts to see filter applied
+
+* Weekly Transactions Piechart
+    1. Go to User/Category section
+    2. Click Legend item or piechart slice
+    3. Check charts to see filter applied
+
+* Daily DApps Users Rowchart
+    1. Go to DApps Users section
+    2. Click DApp row item
+    3. Check charts to see filter applied
+
+* Daily User Transactions Scatterplotchart
+    1. Go to User Transactions section
+    2. Hover over dots to see title details
+    3. Apply filter from selectors to see individual data
+
+* DApps Daily and Weekly Transactions Stacked Barchart
+    1. Go to DApp Transactions section
+    2. Hover over bar section to see title details
+    3. Apply filter from selectors to see individual data.
+    4. Click bar items to filter data
+
+##### Navigation Testing
+
+* Top Navigation Tests
+    1. Go to home page
+    2. Click nav item
+    3. See page scroll to section
+
+* Footer Navigation Tests
+    1. Go to footer section
+    2. Click Nav item
+    3. See page scroll to section
+
+* Back To Top Button Tests
+    1. Scroll down page
+    2. See back to top button fade in
+    3. Click button
+    4. See page scroll to top
+
+* Mobile Navigation Tests
+    1. Open app on mobile device
+    2. Click hamburger menu
+    3. See dropdown menu
+    4. Click Nav item
+    5. See page scroll to section
+
+### Validation Testing
+
+- For _HTML_ validation testing I used [W3 Validator](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fjohn-e5.github.io%2FDApps-Data-Dashboard%2F) which shows the html document to be valid.
+
+- For _CSS_ validation testing I used [W3 CSS Validator](http://jigsaw.w3.org/css-validator/validator) which shows the stylesheet to be valid CSS3.
 
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
-
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
-- Different values for environment variables (Heroku Config Vars)?
-- Different configuration files?
-- Separate git branch?
-
-In addition, if it is not obvious, you should also describe how to run your code locally.
-
+- This App was deployed to [Github pages](https://john-e5.github.io/DApps-Data-Dashboard/)
+- To run this app locally clone or download the repo and open index.html to view in browser.
 
 ## Credits
 
 ### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+- The data used in this app was sourced from:
+- [DApp Radar](https://dappradar.com/)
+- [State of the DApps](https://www.stateofthedapps.com/)
 
-### Media
-- The photos used in this site were obtained from ...
 
 ### Acknowledgements
 
-- I received inspiration for this project from X
+- Stackoverflow was used to research about jasmine testing and dc.js
+- Library Docs were used during development for jasmine.js, d3.js, dc.js 
+- Thanks to slack member @Eventyret_mentor for his glo-boards suggestions
+- Thanks to slack member @abonello_lead for his jasmine testing suggestions
+- Thanks to my mentor @rick_mentor for all his help and suggestions
