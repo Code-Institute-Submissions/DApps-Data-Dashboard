@@ -140,11 +140,54 @@ in the home section or by clicking the bar sections on the chart.
 
 ## Technologies Used
 
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
+For this project the following Technologies were used:
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+    - The project uses **HTML5** to structure the content in line with modern semantic html5.
+
+- [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets#CSS_3)
+    - The project uses **CSS3** to style the html content.
+
+- [FontAwesome](https://fontawesome.com/)
+    - The project uses **FontAwesome** to add icons for chart symbols.
+
+- [Javascript](https://www.javascript.com/)
+    - The project uses **Javascript** to add interactive content to dashboard.
+
+- [Bootstrap 4](https://getbootstrap.com/)
+    - The project uses **Bootstrap** to layout the html content and make it responsive.
+
+- [Bootswatch](https://bootswatch.com/sandstone/)
+    - The project uses **Bootswatch Theme** to add fonts and color the theme chosen was sandstone.
+
+- [D3.js](https://d3js.org/)
+    - The project uses **D3.js** for manipulating documents and rendering charts.
+
+- [Crossfilter](https://github.com/crossfilter/crossfilter)
+    - The project uses **Crossfilter** for manipulating and filtering the data.
+
+- [Dc.js](https://dc-js.github.io/dc.js/)
+    - The project uses **Dc.js** as a charting library with native crossfilter support and usesd3 to render charts.
+
+- [Queue](https://github.com/d3/d3-queue)
+    - The project uses **Queue** as a little helper for asynchronous JavaScript.
+
+- [Jasmine](https://jasmine.github.io/index.html)
+    - The project uses **Jasmine.js** for unit testing.
+
+- [Vs Code](https://code.visualstudio.com/)
+    - The project used **Vs Code** as the IDE of choice.
+
+- [Mockflow](https://mockflow.com/)
+    - The project used **Mockflow** for creating the mock-ups.
+
+- [Git Github](https://github.com/)
+    - The project used **Git Github** for source control management.
+
+- [Git Kraken/Glo Boards](https://www.gitkraken.com/)
+    - The project used **Git Kraken/Glo Boards** for project and task management.
 
 - [JQuery](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation.
-
+    - The project uses **JQuery** to control scrolling and toggle features.
 
 ## Testing
 
