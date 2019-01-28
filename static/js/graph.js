@@ -159,7 +159,7 @@ function show_categories_user_balance(ndx) {
     .ticks(10);
 }
 
-// Second PieChart showing the amount of transactions per platform over a 7 day period
+// Second PieChart showing the amount of transactions(txs) per platform over a 7 day period
 function show_weekly_transactions_per_platform(ndx) {
   var weeklyTxDim = ndx.dimension(dc.pluck('platform'));
 
@@ -215,7 +215,7 @@ function show_daily_users_per_dapp(ndx) {
     .transitionDuration(900);
 }
 
-// ScatterPlot showing the amount of users and transactions over 24hr period
+// ScatterPlot showing the amount of users and transactions(txs) over 24hr period
 function show_users_24hr_transactions(ndx) {
   var usersDim = ndx.dimension(dc.pluck('users_24hr'));
 
@@ -264,7 +264,7 @@ function show_users_24hr_transactions(ndx) {
     .transitionDuration(900);
 }
 
-// Stacked Chart showing daily and weekly transactions by platform
+// Stacked Chart showing daily and weekly transactions(txs) by platform
 function show_dapps_daily_weekly_transactions(ndx) {
   var dappNameDim = ndx.dimension(dc.pluck('name'));
 
